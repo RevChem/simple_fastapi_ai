@@ -14,8 +14,6 @@ DATABASE_URL = (
     f"{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}"
 )
 
-# DATABASE_URL = "postgresql+psycopg://postgres:1917Atdhfkm@localhost:5432/backend_db"
-
 engine = create_async_engine(DATABASE_URL, echo=True)
 
 async_session = async_sessionmaker(
