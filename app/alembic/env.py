@@ -8,8 +8,8 @@ import sys
 import pathlib
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
 
-from database import Base, engine  # твой async_engine
-import entities  # обязательно импортируй модели (Conversation, Message и др.)
+from database import Base, engine 
+import entities 
 
 # Alembic Config
 config = context.config
@@ -20,7 +20,6 @@ target_metadata = Base.metadata
 
 
 def run_migrations_offline():
-    """Запуск в offline-режиме (генерация SQL без коннекта)."""
     context.configure(
         url=str(engine.url),
         target_metadata=target_metadata,
